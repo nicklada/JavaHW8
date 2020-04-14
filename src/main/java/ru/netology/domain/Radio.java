@@ -2,10 +2,27 @@ package ru.netology.domain;
 
 public class Radio {
     private int currentStation;
-    private int maxStation=10;
+    private int maxStation;
     private int minStation;
     private int currentVolume;
-    private int maxVolume=10;
+
+    public void setMaxStation(int maxStation) {
+        this.maxStation = maxStation;
+    }
+
+    public void setMinStation(int minStation) {
+        this.minStation = minStation;
+    }
+
+    public void setMaxVolume(int maxVolume) {
+        this.maxVolume = maxVolume;
+    }
+
+    public void setMinVolume(int minVolume) {
+        this.minVolume = minVolume;
+    }
+
+    private int maxVolume;
     private int minVolume;
 
     public int getCurrentStation() {
@@ -21,7 +38,7 @@ public class Radio {
         }
         this.currentStation = currentStation;
     }
-    public void setNextStation(int currentStation) {
+    public void setNextStation() {
         int nextStation = currentStation+1;
         if (nextStation > maxStation) {
            this.currentStation = minStation;
@@ -29,7 +46,7 @@ public class Radio {
         else
         this.currentStation = nextStation;
     }
-    public void setPreviousStation(int currentStation) {
+    public void setPreviousStation() {
         int previousStation = currentStation-1;
         if (previousStation < minStation) {
             this.currentStation = maxStation;
@@ -63,14 +80,14 @@ public class Radio {
         }
         this.currentVolume = currentVolume;
     }
-    public void increaseCurrentVolume(int currentVolume) {
+    public void increaseCurrentVolume() {
         int nextVolume = currentVolume+1;
         if (nextVolume > maxVolume) {
             return;
         }
         this.currentVolume = nextVolume;
     }
-    public void decreaseCurrentVolume(int currentVolume) {
+    public void decreaseCurrentVolume() {
         int previousVolume = currentVolume-1;
         if (previousVolume < minVolume) {
           return;
