@@ -22,6 +22,7 @@ class RadioTest {
 
     @Test
     public void shouldNotSetStation() {
+        Radio radio = new Radio();
         radio.setMaxStation(5);
         radio.setCurrentStation(6);
         assertEquals(0, radio.getCurrentStation());
@@ -31,6 +32,7 @@ class RadioTest {
 
     @Test
     public void shouldSetStation() {
+        Radio radio = new Radio();
         radio.setMaxStation(50);
         radio.setCurrentStation(25);
         assertEquals(25, radio.getCurrentStation());
