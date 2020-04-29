@@ -62,7 +62,6 @@ class RadioTest {
 
     @Test
     public void shouldSetMaxStation() {
-        Radio radio = new Radio();
         radio.setMaxStation(20);
         radio.setCurrentStation(0);
         radio.setPreviousStation();
